@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 export default function DailyForecastCard({ day, kelvinToCelsius }) {
   return (
-    <div className="p-4 text-gray-800 bg-blue-200 rounded-lg shadow-md">
+    <div className="p-4 py-2 text-gray-800 bg-blue-200 rounded-lg shadow-md">
       <p>
         <span className="font-semibold">Max:</span>{" "}
         {kelvinToCelsius(day.temp.max)}°C

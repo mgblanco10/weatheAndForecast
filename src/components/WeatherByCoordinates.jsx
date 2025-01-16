@@ -5,6 +5,7 @@ import DailyForecastCard from "./DailyForecastCard";
 
 export default function WeatherByCoordinates({ weatherData }) {
   const navigate = useNavigate();
+
   if (!weatherData || !weatherData.current || !weatherData.daily) {
     return (
       <div className="text-center text-red-500">
@@ -69,9 +70,9 @@ export default function WeatherByCoordinates({ weatherData }) {
               <p>{weatherData.current.visibility} m</p>
             </div>
           </div>
-          <h3 className="mt-6 text-lg font-semibold">Daily Forecast:</h3>
-          <div className="grid grid-cols-2 gap-4 mt-4">
-            {weatherData.daily.slice(0, 3).map((day) => (
+          <h3 className="mt-6 text-lg font-semibold">7-Day Forecast:</h3>
+          <div className="grid grid-cols-2 gap-2 mt-4">
+            {weatherData.daily.map((day) => (
               <DailyForecastCard
                 key={day.dt}
                 day={day}
