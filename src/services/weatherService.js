@@ -9,7 +9,6 @@ export async function getWeatherByCoordinates(lat, lon) {
     `onecall?lat=${lat}&lon=${lon}&appid=${API_KEY}`,
     "3.0"
   );
-  console.log(url);
 
   try {
     const response = await fetch(url, getBaseHeaders());
@@ -38,7 +37,6 @@ export async function getWeatherByCity(city) {
     `weather?q=${city.trim()}&appid=${API_KEY}&units=metric`,
     "2.5"
   );
-  console.log(url);
 
   try {
     const response = await fetch(url, getBaseHeaders());

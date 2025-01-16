@@ -57,3 +57,7 @@ http://localhost:5173/
 
 - Include additional weather details such as UV index and air quality index.
 - Add user authentication for personalized weather preferences.
+
+### Important note about API token
+
+This project includes an OpenWeatherMap API token to facilitate technical review. The token is designed exclusively for this test and should not be reused outside of this project. If you need to regenerate the token or set up your own, see [OpenWeatherMap](https://openweathermap.org/api) for more information.

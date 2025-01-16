@@ -1,14 +1,12 @@
-const API_KEY = "af4a0b08b7ade829d03c5815b4d4fadf";
-const DEFAULT_BASE_URL = "https://api.openweathermap.org/data";
+import config from "../../config";
+
+export const API_KEY = config.API_KEY;
+export const DEFAULT_BASE_URL = config.BASE_URL;
+
 const DEFAULT_VERSION = "3.0";
 
-let rootUrl;
-
 function createRootUrl(version = DEFAULT_VERSION) {
-  if (!rootUrl) {
-    rootUrl = `${DEFAULT_BASE_URL}/${version}`;
-  }
-  return rootUrl;
+  return `${DEFAULT_BASE_URL}/${version}`;
 }
 
 function getBaseUrl(endpoint, version = DEFAULT_VERSION) {
@@ -18,7 +16,7 @@ function getBaseUrl(endpoint, version = DEFAULT_VERSION) {
     );
   }
 
-  const baseUrl = `${DEFAULT_BASE_URL}/${version}`;
+  const baseUrl = createRootUrl(version);
   return `${baseUrl}/${endpoint}`;
 }
 
@@ -28,4 +26,4 @@ function getBaseHeaders() {
   };
 }
 
-export { createRootUrl, getBaseUrl, getBaseHeaders, API_KEY };
+export { createRootUrl, getBaseUrl, getBaseHeaders };

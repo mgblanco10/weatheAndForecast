@@ -46,8 +46,8 @@ export default function WeatherInput() {
   return (
     <div className="relative flex items-center justify-center min-h-screen bg-gradient-to-r from-blue-100 to-blue-300">
       <SlidingBanner />
-      <div className="relative p-[3px] w-full max-w-xl rounded-lg bg-gradient-to-r from-green-400 via-blue-500 to-green-700">
-        <div className="relative flex flex-col justify-between w-full p-6 bg-white rounded-lg shadow-lg sm:max-w-md md:max-w-lg lg:max-w-xl">
+      <div className="relative w-full max-w-xl p-[3px] rounded-lg bg-gradient-to-r from-green-400 via-blue-500 to-green-700">
+        <div className="flex flex-col justify-between w-full h-full p-6 bg-white rounded-lg shadow-lg sm:p-8">
           <div className="flex justify-center gap-4 mb-6">
             <button
               className={`px-4 py-2 font-semibold rounded-lg ${
@@ -70,7 +70,6 @@ export default function WeatherInput() {
               Search by City
             </button>
           </div>
-
           {searchMode === "coordinates" ? (
             <SearchByCoordinates
               latitude={latitude}
@@ -83,7 +82,6 @@ export default function WeatherInput() {
               <SearchByCity city={city} setCity={setCity} />
             </div>
           )}
-
           <button
             onClick={handleFetchWeather}
             className="w-full px-4 py-2 mt-4 font-semibold text-white bg-blue-500 rounded-lg hover:bg-blue-600 focus:outline-none focus:ring focus:ring-blue-300"
@@ -91,7 +89,6 @@ export default function WeatherInput() {
           >
             {loading ? "Loading..." : "Check Weather"}
           </button>
-
           <div className="h-6 mt-2">
             {error && <p className="text-center text-red-500">{error}</p>}
           </div>
